@@ -1,12 +1,10 @@
-
-}
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
 }
 
 android {
-    namespace 'com.example.jetbot' // این را اگر دوست داشتی به اسم پکیج خودت تغییر بده
+    namespace 'com.example.jetbot'
     compileSdk 34
 
     defaultConfig {
