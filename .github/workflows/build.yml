@@ -1,3 +1,4 @@
+
 name: Android CI
 
 on:
@@ -25,15 +26,8 @@ jobs:
         with:
           gradle-version: 8.2
 
-      - name: Generate Gradle Wrapper if missing
-        run: |
-          if [ ! -f ./gradlew ]; then
-            gradle wrapper --gradle-version 8.2
-          fi
-          chmod +x ./gradlew
-
       - name: Build debug APK
-        run: ./gradlew assembleDebug --stacktrace --no-daemon
+        run: gradle assembleDebug --stacktrace --no-daemon
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
