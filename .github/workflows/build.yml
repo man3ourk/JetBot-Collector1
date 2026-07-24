@@ -22,6 +22,9 @@ jobs:
           java-version: 17
           cache: gradle
 
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
       - name: Grant execute permission for gradlew
         run: |
           if [ -f ./gradlew ]; then
@@ -31,13 +34,13 @@ jobs:
       - name: Build debug APK
         run: |
           if [ -f ./gradlew ]; then
-            ./gradlew assembleDebug
+            ./gradlew assembleDebug --stacktrace
           else
-            echo "gradlew not found in repository root."
-            exit 1
+            gradle assembleDebug --stacktrace
           fi
 
       - name: Upload APK artifact
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: debug-apk
