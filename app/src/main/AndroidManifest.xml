@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.yourname.jetbetcollector">
+    package="com.example.jetbot">
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="JetBet Collector"
+        android:label="JetBot-Collector1"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <service
-            android:name=".JetBetCollectorService"
-            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.accessibilityservice.AccessibilityService" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <meta-data
-                android:name="android.accessibilityservice"
-                android:resource="@xml/accessibility_service_config" />
-        </service>
+        </activity>
 
     </application>
+
 </manifest>
