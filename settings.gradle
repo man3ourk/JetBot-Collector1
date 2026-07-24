@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = 'JetBot-Collector1'
+rootProject.name = "JetBot-Collector1"
 include ':app'
