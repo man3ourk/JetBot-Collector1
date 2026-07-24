@@ -1,24 +1,23 @@
-name: Build JetBet Bot APK
+name: Build JetBet APK
 
 on:
   push:
-    branches: [ "main" ] # یا هر نامی که شاخه اصلی تو دارد
-  workflow_dispatch: # اجازه می‌دهد دستی هم اجرا کنی
+    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v4  # استفاده از آخرین نسخه از checkout
 
     - name: Set up JDK 17
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4  # استفاده از آخرین نسخه از setup-java
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: gradle
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
@@ -26,8 +25,8 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew assembleDebug
 
-    - name: Upload APK
-      uses: actions/upload-artifact@v3
+    - name: Upload APK Artifact
+      uses: actions/upload-artifact@v4  # این همان نسخه حیاتی است که مشکلت را حل می‌کند
       with:
         name: JetBet-App
         path: app/build/outputs/apk/debug/app-debug.apk
