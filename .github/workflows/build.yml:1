@@ -20,12 +20,11 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Force Install Stable Gradle
+      - name: Download Gradle 8.5
         run: |
           wget -q https://services.gradle.org/distributions/gradle-8.5-bin.zip
           unzip -q gradle-8.5-bin.zip
-          echo "$GITHUB_WORKSPACE/gradle-8.5/bin" >> $GITHUB_PATH
 
       - name: Build APK
         run: |
-          gradle assembleDebug --stacktrace
+          ./gradle-8.5/bin/gradle assembleDebug --stacktrace
