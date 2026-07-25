@@ -3,16 +3,17 @@ name: Android CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: List files (Debug)
+        run: ls -R
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -21,11 +22,14 @@ jobs:
           java-version: '17'
           cache: gradle
 
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
-
-      - name: Check Gradle version
-        run: ./gradlew --version
+      - name: Grant execute permission for gradlew
+        run: |
+          if [ -f "./gradlew" ]; then
+            chmod +x gradlew
+          else
+            echo "Error: gradlew not found in root directory"
+            exit 1
+          fi
 
       - name: Build with Gradle
-        run: ./gradlew clean assembleDebug --stacktrace
+        run: ./gradlew assembleDebug --stacktrace
