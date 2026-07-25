@@ -1,12 +1,17 @@
 name: Android Build
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Set up JDK 17
@@ -15,11 +20,14 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Setup Gradle Wrapper
+      - name: Force Install Correct Gradle
         run: |
-          # این دستور اگر gradlew نباشه خودش میسازه
-          gradle wrapper --gradle-version 8.5
-          chmod +x gradlew
+          # اینجا نسخه رو روی 8.5 قفل می‌کنیم که با پلاگین‌ها اوکی باشه
+          wget -q https://services.gradle.org/distributions/gradle-8.5-bin.zip
+          unzip -q gradle-8.5-bin.zip
+          echo "$GITHUB_WORKSPACE/gradle-8.5/bin" >> $GITHUB_PATH
 
-      - name: Build with Gradle
-        run: ./gradlew assembleDebug
+      - name: Build APK
+        run: |
+          # مستقیم با نسخه دانلود شده بیلد می‌گیریم
+          gradle assembleDebug --stacktrace
