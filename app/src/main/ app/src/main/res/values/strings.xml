@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">JetBet Collector</string>
-    <string name="service_description">این سرویس برای استخراج الگوهای اعداد در جت‌بت استفاده می‌شود.</string>
+    <string name="app_name">JetBot Collector</string>
+    <string name="accessibility_service_description">توضیحات سرویس دسترسی شما</string>
 </resources>
