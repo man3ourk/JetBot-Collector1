@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">JetBot Collector</string>
-    <string name="accessibility_service_description">توضیحات سرویس دسترسی شما</string>
+    <string name="accessibility_service_description">JetBot Collector Service</string>
 </resources>
