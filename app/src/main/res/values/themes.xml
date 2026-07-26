@@ -1,3 +1,7 @@
-<resources>
-    <style name="Theme.JetBotCollector1" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.JetBot" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#1E88E5</item>
+        <item name="colorPrimaryVariant">#1565C0</item>
+        <item name="colorSecondary">#03DAC5</item>
+    </style>
 </resources>
