@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
-    android:accessibilityEventTypes="typeAllMask"
-    android:accessibilityFeedbackType="feedbackGeneric"
-    android:accessibilityFlags="flagDefault"
-    android:canRetrieveWindowContent="true"
-    android:description="@string/accessibility_service_description"
-    android:notificationTimeout="100"
-    android:packageNames="com.man3ourk.jetbot" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.JetBotCollector1">
+
+        <activity
+            android:name="com.man3ourk.jetbot.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
