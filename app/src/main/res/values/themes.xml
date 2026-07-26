@@ -1,3 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
     <style name="Theme.JetBotCollector1" parent="Theme.Material3.DayNight.NoActionBar" />
 </resources>
