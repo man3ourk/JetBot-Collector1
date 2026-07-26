@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">JetBot Collector1</string>
+    <string name="welcome_text">JetBot Collector1</string>
+    <string name="status_ready">Ready</string>
+</resources>
