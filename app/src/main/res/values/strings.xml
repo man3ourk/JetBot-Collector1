@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">JetBot Collector1</string>
-    <string name="welcome_text">JetBot Collector1</string>
-    <string name="status_ready">Ready</string>
+    <string name="app_name">JetBot-Collector1</string>
+    <string name="app_ready">Project build is successful.</string>
 </resources>
