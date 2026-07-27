@@ -1,5 +1,4 @@
-application
-}
++application
 
 android {
     namespace 'com.man3ourk.jetbot'
