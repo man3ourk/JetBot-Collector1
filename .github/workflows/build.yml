@@ -21,8 +21,10 @@ jobs:
       - name: Repair Gradle Wrapper
         run: |
           mkdir -p gradle/wrapper
+          
           curl -L https://raw.githubusercontent.com/gradle/gradle/v8.10/gradle/wrapper/gradle-wrapper.jar -o gradle/wrapper/gradle-wrapper.jar
           echo "distributionUrl=https://services.gradle.org/distributions/gradle-8.10-bin.zip" > gradle/wrapper/gradle-wrapper.properties
+
 
       - name: Grant execute permission
         run: chmod +x gradlew
