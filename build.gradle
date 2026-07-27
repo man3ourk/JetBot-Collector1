@@ -1,6 +1,4 @@
 +application
-
-android {
     namespace 'com.man3ourk.jetbot'
     compileSdk 34
 
